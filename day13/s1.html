@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="commons.js"> </script>
+    <script>
+
+
+        //数字、字符串、数组（字典）
+
+        // var age ="18";
+        // //var age = Number(18);
+        // console.log(age, typeof age);
+        //
+        // age = parseInt(age);
+        // console.log(age,typeof age);
+
+        // age = "18.9";
+        // console.log(parseInt(age));
+        // console.log(parseFloat(age));
+
+       // var a1 =1,a2=2,a3=3;
+       //
+       //
+       //
+       //  //Number('123')    字符串转换为数字
+       //  //parseInt('123')
+
+
+        // for 循环
+        //第一种方法：
+        // var li = [11,22,33,44]
+        // for(var i=0;i<li.length;i++){
+        //     console.log(i)
+        //     console.log(li[i])
+        // }
+        //
+        // //第二种方法
+        // for(index in li){
+        //     console.log(index,li[index])
+        // }
+        //
+        // //字典
+        // var dic = {'k1':'v1','k2':'v2'}
+        // for(var key in dic){
+        //     console.log(key,dic[key])
+        // }
+
+
+        // var aaa = 3;
+        //
+        // switch (aaa) {
+        //     case 1:
+        //         console.log('11111');
+        //         break;
+        //     case 2:
+        //         console.log('222222');
+        //         break
+        //
+        //
+        //     default:
+        //         console.log('ddddd')
+        // }
+
+        // 普通函数
+        //
+        // function f1(arg) {
+        //     console.log(arg)
+        //     return"alex"
+        //     }
+        //
+        // var ret = f1(123);
+        // console.log(ret);
+        //
+        // 匿名函数
+        // var f = function (arg) {
+        //     console.log(arg)
+        //
+        // }
+        //
+        // f(1234)
+        //
+        // 自执行函数
+        //
+        // (function (arg) {
+        //    console.log(1111,arg)
+        // })("alex")
+
+
+        function Foo(name,age) {
+            this.Name = name;
+            this.Age = age;
+            this.Func = function (age) {
+                return this. Name + age;
+            }
+        }
+
+        var obj = new Foo('alex',19);
+
+        console.log(obj.Name);
+        console.log(obj.Age);
+
+        var ret = obj.Func('sb')
+        console.log(ret)
+
+
+    </script>
+
+
+
+
+</body>
+</html>

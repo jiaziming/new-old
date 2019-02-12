@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="n1"></div>
+    <div class="c1">222</div>
+    <div class="c1">333</div>
+
+    <a></a>
+    <span id="n3"></span>
+    <div>
+        <div>
+            <div>
+                <span>
+                    <a class="c3"></a>
+                </span>
+            </div>
+        </div>
+        <span>asdasd</span>
+    </div>
+
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+         /*
+            获取标签
+            修改
+        */
+        // $ = jQuery
+        $("#n1").text(123);
+        $('div').text('xxx');
+        $('.c1').text('oooo');
+        $('.c1,a,#n2').text('ok')
+        $('#n3 div .c3 span a ').text('kkkkkk');
+        $('.c4').text('9999');
+    </script>
+</body>
+</html>

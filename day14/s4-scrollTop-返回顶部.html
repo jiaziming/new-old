@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+
+    <style>
+        .go-top{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100px ;
+            height: 100px;
+        }
+        .hide{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="height: 3000px; background-color: #dddddd">
+        <div id="nid1" style="height: 600px; background-color: aquamarine; overflow: auto ">
+
+        </div>
+    </div>
+    <div class="go-top hide" >
+        <a onclick="gotop();">  返回顶部 </a>
+    </div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+        window.onscroll = function () {
+            var currenttop = $(window).scrollTop();
+            if (currenttop >100){
+                $('.go-top').removeClass('hide');
+            } else {
+                $('.go-top').addClass('hide');
+
+            }
+        }
+
+        function gotop() {
+
+            $(window).scrollTop(0)
+        }
+
+    </script>
+</body>
+</html>

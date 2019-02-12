@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>费用管理中心</title>
+</head>
+<body>
+
+    <input type="button" onclick="stopinterval();" value="停止">
+
+
+    <script>
+        //setInterval('操作','间隔')
+        //setInterval(alert('123'),1000)
+        //setTimeout()  执行一次就不在操作
+
+        //obj1= setInterval('Func()',1000)    //全局变量  多次执行
+        obj1= setTimeout('Func()',1000)
+
+
+        function stopinterval() {
+            //清楚定时器
+            clearTimeout(obj1)
+            clearInterval(obj1)
+        }
+
+        function Func() {
+            var text = document.title;
+            var firstchar= text.charAt(0);                  //获取title  的第一个字符
+            var subtxt = text.substring(1,text.length)      //获取tiele  剩余的字符  text.length 是剩余的长度
+            var newtitle = subtxt + firstchar;
+
+            document.title = newtitle;
+        }
+
+    </script>
+</body>
+</html>

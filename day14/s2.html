@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input id="d1" type="checkbox">
+    <input id="d2" type="checkbox" checked="checked">
+
+    <div>
+        <input type="button" value="全选" onclick="SelectAll();" >
+        <input type="button" value="取消" onclick="ClearAll(); ">
+        <input type="button" value="反选" onclick="ReverseALL(); ">
+
+    </div>
+
+    <div>
+        <table border="1">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123</td>
+                <td>123</td>
+
+                <td>123</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+        function SelectAll() {
+            //table标签中的所有input
+            //$('table input[type='checkbox']')
+            //$("table:checkbox") 找到所有的input checkbox
+            $('table :checkbox').prop('checked',true);
+        }
+
+        function ClearAll() {
+            $('table :checkbox').prop('checked',false);
+        }
+
+
+        function ReverseALL() {
+
+            // for(var i in userlist){
+            //
+            // }
+            //
+            //
+            //
+            // var userlist = [11,22,33,44]
+            // $.each(userlist,function (i,item) {
+            //     console.log(i,item)
+            // });
+
+            /*
+            var checkboxlist = $('table :checkbox');
+            for (var i in checkboxlist){
+                var ele = checkboxlist[i];
+                //检查属性是够选中
+                var ischecked = $(ele).prop('chenked');
+                if(ischecked){
+                    $(ele).prop('checked',false);
+                }else {
+                    $(ele).prop('checked' ,true);
+                }
+                //如果选中，取消
+                //如果没有选中，进行选中
+               }
+             */
+            $('table :checkbox').each(function () {
+                //每一次循环都执行该方法体
+                //$(this) 表示当前循环的元素
+                var ischecked = $(this).prop('checked');
+                if(ischecked){
+                    $(this).prop('checked',false);
+                }else {
+                    $(this).prop('checked',true);
+                }
+            })
+
+        }
+    </script>
+</body>
+</html>

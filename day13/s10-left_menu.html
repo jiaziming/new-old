@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title> </title>
+
+    <style>
+        .menu{
+            float: left;width: 20%;height: 2000px; background-color: darkslategray ;
+        }
+
+        .content{
+            float: left;width: 80%;height: 2000px; background-color: #dddddd;
+        }
+
+        .tiele {
+            background-color: teal;
+            color: honeydew;
+            height: 30px;
+            line-height: 30px;
+        }
+        .hide {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="menu">
+            <div class="item">
+                <div class="tiele" onclick="Func(this);">菜单一</div>
+                <div class="body hide" >
+                    <div>1.1</div>
+                    <div>1.2</div>
+                    <div>1.3</div>
+                </div>
+
+            </div>
+
+            <div class="item">
+                <div class="tiele" onclick="Func(this);">菜单二</div>
+                <div class="body hide">
+                    <div>2.1</div>
+                    <div>2.2</div>
+                    <div>2.3</div>
+                </div>
+
+            </div>
+
+            <div class="item">
+                <div class="tiele" onclick="Func(this);">菜单三</div>
+                <div class="body hide ">
+                    <div>3.1</div>
+                    <div>3.2</div>
+                    <div>3.3</div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="content"></div>
+
+    </div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        function Func(ths) {
+            // $(ths)
+            //获取菜单一
+            //获取菜单二
+            console.log($(ths).text());
+            $(ths).next().removeClass('hide');
+            $(ths).parent().siblings().find('.body').addClass('hide');
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>密 码</th>
+                <th>年 龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for itme in li %}
+                <tr>
+                    <td>{{itme.username}}</td>
+                    <td>{{itme.password}}</td>
+                    <td>{{itme.age}}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</body>
+</html>

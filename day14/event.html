@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+    <div onclick="func()"></div>
+    <div >
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+
+        function func() {
+        }
+
+        $('li').click(function () {
+            var tmp = $(this).text();
+            alert(tmp)
+        })
+
+        //当前文档准备就绪
+
+        $(document).ready(function () {
+            //
+        });
+
+        $(function () {
+            // 最基本的jquery 的时间绑定
+            $('li').click(function () {
+            var tmp = $(this).text();
+            alert(tmp);
+            });
+        })
+
+
+    </script>
+</body>
+</html>

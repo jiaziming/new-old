@@ -1,0 +1,67 @@
+1.  创建django 程序：
+
+        a 、 命令： django admin startproject mysit 创建 project
+        cd mysit
+
+        python manage.py startapp app01     创建app01
+        python manage.py startapp app02     创建app02
+
+        b、pycharm
+            创建django程序
+
+            win：
+                终端，python   python manage.py startapp app01    -windows
+
+            mac:
+                optin + R
+                    startapp app01
+
+
+2、执行django 程序：
+    进入project
+
+    python manage.py runserver 127.0.0.1:8000
+
+3、 django 依赖数据库
+
+        配置：settings
+        生成数据库表
+
+        python manage.py makemigrations  #生成配置文件
+        python manage.py migrate        #根据配置文件创建数据库相关
+
+
+
+4、admin
+
+        python manage.py createsuperuser    #创建超级用户
+
+
+        http://127.0.0.1:8000/admin/
+
+5、路由管理系统
+
+        1、静态路由
+        2、动态路由
+            按照顺序，第n个匹配的数据,交给函数的第n个参数，严格按照顺序
+            模板的方法，将匹配的参数，传给指定的是形式参数
+
+        3、二级路由
+                app01
+                    url.py
+
+                project_name
+                    URL:     include('app01.url)'
+
+
+6、基本数据库操作
+
+    Orm框架
+       code first
+           自己写类  -> 数据库表
+
+       db first
+           自己命令数据表和字典 -> 创建表
+
+       使用类进行操作
+

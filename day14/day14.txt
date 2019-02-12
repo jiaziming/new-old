@@ -1,0 +1,23 @@
+Day 14 jquery
+
+1. 查找
+        选择器：
+            $('#nid')           根据id 进行查找
+            $('.nid')           根据class 进行查找
+            $('.nid div #nid ') 根据标签层级进行查找  class=nid 下面的div标签  下面的id=nid 的标签
+            $('.nid,div,#nid ') 查找clas=nid  div 和 id=nid 的所有标签
+
+           筛选器
+           $('li').eq(0)
+           ==左侧菜单
+           ==tab 菜单
+
+ 2. 操作
+        属性
+        css
+        文档处理
+        事件
+        ajax
+        jquery 扩展
+        其他
+ 3. 作业二

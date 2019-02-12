@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="container" class="v1" style="font-size: 12px;color: blue;">hello word </div>
+    <a href="https://www.baidu.com" onclick=" return addelement();"> 添加跳转 </a>
+
+
+    <script>
+
+        //第一种方式
+        // function addelement() {
+        //     //创建标签，添加在container 中
+        //     var nid = document.getElemetById("container");
+        //     var tag = "<input type='text' />";
+        //     nid.innerHTML = tag
+        //     return false;     // 返回false  就不会继续执行后面的函数
+        // }
+
+
+        //第二种方式：
+         function addelement() {
+             //     var nid = document.getElementById("container");
+             //     var tag = "<input type='text'/>";
+             //     //nid.innerHTML = tag;
+             //     //'beforeBegin'  新的添加在第一个, 'afterBegin', 'beforeEnd', 'afterEnd'
+             //     nid.insertAdjacentHTML("beforeBegin", tag);
+             //     return false;
+             // }
+
+             var createobj = document.createElement('a');     //创建一个标签
+             createobj.href = "https://www.baidu.com";
+             createobj.innerText = '百度';
+             console.log(createobj);
+
+             var nid = document.getElementById('container');
+             //nid .innerHTML(createobj)
+             nid.appendChild(createobj)
+
+             return false;
+
+
+         }
+    </script>
+</body>
+</html>

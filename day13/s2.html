@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<div>-->
+        <!--<div id="n1">c1</div>-->
+        <!--<a> asdasdq23e</a>-->
+    <!--</div>-->
+
+    <!--<ul>-->
+        <!--<li>123</li>-->
+        <!--<li>123</li>-->
+        <!--<li>123</li>-->
+        <!--<li>123</li>-->
+        <!--<li>123</li>-->
+    <!--</ul>-->
+
+    <!--<div>-->
+        <!--<div class="c1">1</div>-->
+        <!--<div class="c1">2</div>-->
+        <!--<div class="c1">3</div>-->
+
+    <!--</div>-->
+
+    <!--<form>-->
+        <!--<p>用户名：<input name="username" value="123"></p>-->
+        <!--<p>密  码：<input name="password" value="456" ></p>-->
+
+    <!--</form>-->
+
+    <div>
+        <div id="number">1</div>
+        <input type="button" value="+1" onclick="add()"/>
+        <input type="button" value="-1" onclick="del()"/>
+
+    </div>
+
+<script>
+     function del() {
+        var nid = document.getElementById('number');
+        var text = nid.innerText;
+        text = parseInt(text);
+        text -= 1
+        nid.innerText =text;
+    }
+
+
+    function add() {
+        var nid = document.getElementById('number');
+        var text = nid.innerText;
+        text = parseInt(text);
+        text += 1
+        nid.innerText =text;
+    }
+
+
+
+
+    // var nid = document.getElementById('n1');
+    // nid.innerText = "alex"
+    //
+    // var lis = document.getElementsByTagName('li')
+    // for(var i in lis){
+    //     var item = lis[i]
+    //     item.innerText = i;
+    // }
+    //
+    // var lis2 = document.getElementsByClassName('c1')
+    // for(var i in lis2){
+    //     var item = lis2[i]
+    //     item.innerText = i;
+    // }
+    //
+    // var username = document.getElementsByName('username')[0];
+    // var password = document.getElementsByName('password')[0];
+    // console.log(username.value,password.value);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+
+    <style>
+
+        .tab-box .box-menu{
+            background-color: #dddddd;
+            border: 1px solid #dddddd;
+            height: 33px;
+            line-height: 33px;
+        }
+        .box-menu a {
+            border-right: 1px solid black;
+            padding: 6px;
+        }
+        .box-menu{
+            background-color: #dddddd;color: brown; border: 1px solid #dddddd;
+        }
+        .box-dody{
+             border: 1px solid #dddddd;
+        }
+        .hide {
+            display: none;
+        }
+        .current {
+            background-color: #dddddd;
+            border-top: 2px solid darkred;
+            color: black ;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="tab-box">
+        <div class="box-menu">
+            <!--所有菜单-->
+            <a itme="c1" onclick="changtab(this)" class="current">菜单一</a>
+            <a itme="c2" onclick="changtab(this)">菜单二</a>
+            <a itme="c3" onclick="changtab(this)">菜单三</a>
+        </div>
+        <div class="box-dody">
+            <!--所有内容-->
+            <div id="c1">内容一</div>
+            <div id="c2" class="hide">内容二</div>
+            <div id="c3" class="hide">内容三</div>
+        </div>
+    </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+        function changtab(ths) {
+            $(ths).addClass('current').siblings().removeClass('current');
+
+            //获取当前点击的标签   $(ths)
+            var contentID = $(ths).attr('itme');
+            //$(#'c1')
+            var temp = "#" + contentID;
+            $(temp).removeClass('hide').siblings().addClass('hide');
+            //获取当前表桥的属性 itme 的对应的值
+
+        }
+
+    </script>
+</body>
+</html>
