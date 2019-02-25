@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>payment </title>
+</head>
+<body>
+    <h1>welcome to shapping mall, payment center </h1>
+{#    <h2> user:{{ user_obj.user }} </h2>     {# {{user_obj.username}}#}
+{#    <h2> name:{{ user_obj.name }} </h2>      {#   {{ user_obj.name }}#}
+    <ul>
+        {% for user_obj in user_objs %}
+            <li>username:{{ user_obj.username}},name:{{ user_obj.name }},age:{{ user_obj.age }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -3,9 +3,27 @@ from django.shortcuts import render,HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('welcome to payment index')
+    if request.method == 'GET':
+
+        # user_info = {'user':'alex',
+        #              'name':'Alex Li'}
+
+        user_info = [
+
+            {'username':'alex','name':'AlexLi1','age':19},
+            {'username':'jack','name':'jackmat','age':12},
+            {'username':'erio','name':'eroeorn','age':54},
+            {'username':'pony','name':'ponytom','age':54},
+        ]
 
 
+        #print("user request:",request.GET.get('user'))
+        return render(request,'App01/index.html',{'user_objs':user_info})
+
+
+def payment_url(reuest):
+
+    return HttpResponse('Hello tuhao')
 
 
 def special_case_2003(request):
