@@ -8,6 +8,9 @@ from App01 import views
 urlpatterns = [
 
         re_path(r'^$',views.index),
+        re_path(r'^p1/$',views.page1),
+        re_path(r'^p1_1/$',views.page1_1),
 
 
 ]
+

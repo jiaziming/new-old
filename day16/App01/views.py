@@ -21,6 +21,18 @@ def index(request):
         return render(request,'App01/index.html',{'user_objs':user_info})
 
 
+
+
+def page1(request):
+
+    return render(request,'App01/page1.html')
+
+def page1_1(request):
+
+    return render(request,'App01/page_1.html')
+
+
+
 def payment_url(reuest):
 
     return HttpResponse('Hello tuhao')

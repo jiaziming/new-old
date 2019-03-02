@@ -1,0 +1,14 @@
+{% extends 'App01/index.html' %}
+
+{% block header-menu %}
+    <h1> Hello  welcome to china </h1>
+{% endblock %}
+
+
+{% block content-contauner %}
+    <h1>page 1</h1>
+        {% block father-contauner %}
+            {% include 'App01/register_com.html' %}
+    {% endblock %}
+{% endblock %}
+

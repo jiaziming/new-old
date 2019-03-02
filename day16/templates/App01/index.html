@@ -5,13 +5,42 @@
     <title>payment </title>
 </head>
 <body>
+    {% block header-menu %}
+    <ul>
+        <li style="display: inline-block">Home</li>
+        <li style="display: inline-block">page1</li>
+        <li style="display: inline-block">page2</li>
+        <li style="display: inline-block">page2</li>
+    </ul>
+    {% endblock %}
+
+
+    {% block content-contauner  %}
     <h1>welcome to shapping mall, payment center </h1>
+        {% include 'App01/register_com.html' %}
 {#    <h2> user:{{ user_obj.user }} </h2>     {# {{user_obj.username}}#}
 {#    <h2> name:{{ user_obj.name }} </h2>      {#   {{ user_obj.name }}#}
     <ul>
         {% for user_obj in user_objs %}
-            <li>username:{{ user_obj.username}},name:{{ user_obj.name }},age:{{ user_obj.age }}</li>
+{#            {% ifequal user_obj 'pony' %}    旧式写法#}
+{#            {% if forloop.counter > 2 %}    大于2的标红 #}
+{#            % if user_obj.username == 'pony' %   counter0 就是从0开始计数  counter 就是从1开始计数#}
+
+            {% if forloop.counter0|divisibleby:'2' %}   {#奇数就标红  偶数不变#}
+            <li style="background-color: red">username:{{ user_obj.username}},name:{{ user_obj.name }},age:{{ user_obj.age }}</li>
+            {% else %}
+                <li style="">username:{{ user_obj.username}},name:{{ user_obj.name }},age:{{ user_obj.age }}</li>
+{#            {% endifequal %}                    旧式写法#}
+            {% endif %}
         {% endfor %}
+
     </ul>
+    {% endblock  %}
+
+
+    <footer>
+    <p>Powered by JAM</p>
+    </footer>
+
 </body>
 </html>
