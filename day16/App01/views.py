@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse
 
 # Create your views here.
+from  App01 import models
 
 def index(request):
     if request.method == 'GET':
@@ -46,6 +47,49 @@ def special_case_2003(request):
 
 
 
+def book(request):
+
+    if request.method == "POST":
+        print(request.POST)
+        book_name = request.POST.get('name')
+        publisher_id = request.POST.get('publisher_id')
+        print('--->',request.POST.get('author_ids'))
+        author_ids = request.POST.getlist('atuhor_ids')
+
+
+        print(book_name,publisher_id,author_ids)
+
+
+        new_book = models.book(
+            name = book_name,
+            publisher_id = publisher_id,
+            publisher_date = '2016-05-22'
+        )
+
+        new_book.save()
+        new_book.authors.add(*author_ids)
+
+
+
+    book = models.book.objects.all()
+    publisher_list = models.Publisher.objects.all()
+    author_list = models.Author.objects.all()
+
+
+    return render(request.App01/book.html,{'books':book,
+                                           'pulishers':publisher_list,
+                                           'authors':author_list
+                                           })
+
+
+
+def book_from(request):
+
+  return render(request,'App01/book_from.html')
+
+
+
+
 def year_archive(request,year):
     print("--->",year)
     return HttpResponse(year)
@@ -59,3 +103,7 @@ def month_archive(request,year,month):
 def article_detail(request,year,month,article,file_type):
     print("--->", year,month,article,file_type)
     return HttpResponse("%s/%s-[%s.%s]" %(year,month,article,file_type))
+
+
+
+
