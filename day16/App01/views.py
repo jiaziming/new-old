@@ -1,7 +1,8 @@
 from django.shortcuts import render,HttpResponse
 
 # Create your views here.
-from  App01 import models
+from App01 import models,froms
+
 
 def index(request):
     if request.method == 'GET':
@@ -47,6 +48,22 @@ def special_case_2003(request):
 
 
 
+def year_archive(request,year):
+    print("--->",year)
+    return HttpResponse(year)
+
+
+def month_archive(request,year,month):
+    print("--->", year,month)
+    return HttpResponse("%s/%s" %(year,month))
+
+
+def article_detail(request,year,month,article,file_type):
+    print("--->", year,month,article,file_type)
+    return HttpResponse("%s/%s-[%s.%s]" %(year,month,article,file_type))
+
+
+
 def book(request):
 
     if request.method == "POST":
@@ -83,26 +100,56 @@ def book(request):
 
 
 
+
+
 def book_from(request):
+    form = froms.bookform()
 
-  return render(request,'App01/book_from.html')
+    if request.method == 'POST':
+        print(request.POST)
+        form = froms.bookform(request.POST)
+        if form.is_valid():
+            print('form is ok')
+            print(form.cleaned_data)
+            from_data = form.cleaned_data
+            from_data['publisher_id'] = request.POST.get('publisher_id')
+            book_obj = models.Book(**from_data)
+            book_obj.save()
+
+        else:
+            print(form.errors)
 
 
+    publisher_list = models.Publisher.objects.all()
+
+    return render(request,'App01/book_from.html',{'book_from':form,
+                                                  'publisher_list':publisher_list})
 
 
-def year_archive(request,year):
-    print("--->",year)
-    return HttpResponse(year)
+def book_model_from(request):
+    #form = froms.bookform()
+    form = froms.PublishForm()
+
+    if request.method == 'POST':
+        print(request.POST)
+        form = froms.PublishForm(request.POST)
+        if form.is_valid():
+            print('form is ok')
+            print(form.cleaned_data)
+            from_data = form.cleaned_data
+            from_data['publisher_id'] = request.POST.get('publisher_id')
+            #book_obj = models.Book(**from_data)
+            #book_obj.save()
+
+        else:
+            print(form.errors)
 
 
-def month_archive(request,year,month):
-    print("--->", year,month)
-    return HttpResponse("%s/%s" %(year,month))
+    publisher_list = models.Publisher.objects.all()
 
+    return render(request,'App01/book_model.html',{'book_from':form,
+                                                  'publisher_list':publisher_list})
 
-def article_detail(request,year,month,article,file_type):
-    print("--->", year,month,article,file_type)
-    return HttpResponse("%s/%s-[%s.%s]" %(year,month,article,file_type))
 
 
 

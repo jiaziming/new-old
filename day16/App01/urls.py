@@ -13,7 +13,7 @@ urlpatterns = [
         re_path(r'^p1_1/$',views.page1_1),
         re_path(r'^book/$',views.book),
         re_path(r'^book_from/',views.book_from),
-
+        re_path(r'^book_model_from/', views.book_model_from),
 
 ]
 

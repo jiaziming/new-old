@@ -5,6 +5,19 @@
     <title></title>
 </head>
 <body>
+<form action="" method="post"> {% csrf_token %}
+     {{ book_from }}
+{#     {{ book_from.publisher_id }}#}
+
+    <select name="publisher_id">
+        {% for publisher in publishers %}
+            <option value="{{ publisher_id }}"> {{ publisher.name }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="提交">
+
+</form>
 
 </body>
 </html>
